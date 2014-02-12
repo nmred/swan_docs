@@ -10,9 +10,9 @@ doc_sidebar:
     Configuration: configuration.html
     Commands: commands.html
     Migration: migration.html
-  Basic Usage:
-    Writing: writing.html
-    Generating: generating.html
+  Inner Api:
+    介绍: inner_api.html
+    设备相关: device.html
     Tag Plugins: tag-plugins.html
     Server: server.html
     Deployment: deployment.html
