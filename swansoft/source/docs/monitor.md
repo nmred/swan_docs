@@ -1,12 +1,13 @@
-title: 设备管理 API
-next: device_monitor
-prev: inner_api
+title: 监控器管理 API
+next: monitor_attr
+prev: device_monitor
 ---
 
-###添加设备(device.add)
+###添加监控器(monitor_basic.add)
 
 ####[URL](#add_url) 
-http://127.0.0.1/user/?/device.add
+http://127.0.0.1/dev/?/monitor_basic.add
+//todo
 
 ####[请求方式](#add_post)
 POST

@@ -4,30 +4,10 @@ menu:
   仓库: https://github.com/nmred/sf1
 
 doc_sidebar:
-  Getting Started:
-    Overview: index.html
-    Setup: setup.html
-    Configuration: configuration.html
-    Commands: commands.html
-    Migration: migration.html
   Inner Api:
     介绍: inner_api.html
-    设备相关: device.html
-    Tag Plugins: tag-plugins.html
-    Server: server.html
-    Deployment: deployment.html
-  Customization:
-    Permalinks: permalinks.html
-    Themes: themes.html
-    Variables: variables.html
-    Pagination: pagination.html
-    Helpers: helpers.html
-    i18n: i18n.html
-  Advanced:
-    Models: models.html
-    Events: events.html
-    Plugins: plugins.html
-  Miscellaneous:
-    Troubleshooting: troubleshooting.html
-    Contributing: contributing.html
+    设备管理: device.html
+    设备监控器管理: device_monitor.html
+    监控器管理: monitor.html
+    监控器属性管理: monitor_attr.html
 
