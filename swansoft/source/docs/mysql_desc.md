@@ -215,6 +215,14 @@ collect_every | int | false | 11 |  |   | true
  | 轮询周期 ||||||
 time_threshold | int | false | 11 |  |   | true
  | 收集数据超时 ||||||
+tmax | int | false | 11 |  |   | true
+ | 没有收到数据的最长时间 ||||||
+dst_type | tinyint | false | 1 | 1 |   | true
+ | 数据入库处理规则 ||||||
+vmin | varchar | false | 255 | U |   |  
+ | 数据的最小值 ||||||
+vmax | varchar | false | 255 | U |   |  
+ | 数据的最大值 ||||||
 title | varchar | false | 255 |  |   |  
  | 数据项标题 ||||||
 ####monitor_archive####

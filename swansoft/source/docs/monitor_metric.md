@@ -22,6 +22,10 @@ JSON
 `collect_every`  | true | int    | 监控器数据项轮询的时间间隔
 `time_threshold`  | false | mixed    | 监控器数据项获取数据超时时间 (ms)
 `title` | false | string | 监控器数据项描述信息
+`dst_type` | false | int | 监控器数据项数据处理类型
+`tmax` | false | int | 监控器数据项最大允许超时时间
+`vmin` | false | string | 监控器数据项最小允许值
+`vmax` | false | string | 监控器数据项最大允许值
 
 ####[注意事项](#add_notice)
 
@@ -74,6 +78,11 @@ JSON
 `name` | false | string    | 监控器数据项名称
 `time_threshold` | false | string    | 监控器数据项获取数据超时时间
 `collect_every` | false | string    | 监控器轮询时间间隔
+`dst_type` | false | int | 监控器数据项数据处理类型
+`tmax` | false | int | 监控器数据项最大允许超时时间
+`vmin` | false | string | 监控器数据项最小允许值
+`vmax` | false | string | 监控器数据项最大允许值
+
 ####[注意事项](#mod_notice)
 无
 ####[调用样例](#mod_example)
@@ -168,47 +177,27 @@ JSON
 ```
 ####[返回结果](#json_result)
 ``` json
-{
-    "code": 10000,
-    "msg": "get monitor metric success.",
-    "data": {
-        "result": [
-            {
-                "metric_id": "3",
-                "metric_name": "metric_1",
-                "monitor_id": "1",
-                "collect_every": "60",
-                "time_threshold": "10",
-                "title": ""
-            },
-            {
-                "metric_id": "4",
-                "metric_name": "metric_2",
-                "monitor_id": "1",
-                "collect_every": "60",
-                "time_threshold": "30",
-                "title": ""
-            },
-            {
-                "metric_id": "5",
-                "metric_name": "metric_3",
-                "monitor_id": "1",
-                "collect_every": "60",
-                "time_threshold": "10",
-                "title": ""
-            },
-            {
-                "metric_id": "6",
-                "metric_name": "metric_4",
-                "monitor_id": "1",
-                "collect_every": "1000",
-                "time_threshold": "200",
-                "title": "33333"
-            }
-        ],
-        "count": "4"
-    }
-}
+	{
+		"code": 10000,
+		"msg": "get monitor metric success.",
+		"data": {
+			"result": [
+				{
+					"metric_id": "1",
+					"metric_name": "ss212221393426199",
+					"monitor_id": "1",
+					"collect_every": "1000",
+					"time_threshold": "200",
+					"tmax": "30",
+					"dst_type": "1",
+					"vmin": "U",
+					"vmax": "U",
+					"title": "eeee"
+				}
+			],
+			"count": "1"
+		}
+	}
 ```
 ####[返回字段说明](#json_result_dis)
 返回值字段 | 字段类型 | 字段说明
@@ -222,3 +211,7 @@ JSON
 `collect_every` | string | 监控器轮询时间
 `time_threshold` | string | 监控器数据项获取数据超时时间
 `title` | string | 监控器数据项描述信息
+`dst_type` | false | int | 监控器数据项数据处理类型
+`tmax` | false | int | 监控器数据项最大允许超时时间
+`vmin` | false | string | 监控器数据项最小允许值
+`vmax` | false | string | 监控器数据项最大允许值
