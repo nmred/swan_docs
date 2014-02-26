@@ -73,17 +73,29 @@ JSON
 ####[请求参数](#mod_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`vid` | true | int     | 监控器属性值 ID
-`value` | false | mixed    | 监控器属性值
+`did` | true | int     | 设备 ID
+`mid` | true | int     | 监控器 ID
+`attr_data` | false | string    | 设备监控器的属性 params 值
 ####[注意事项](#mod_notice)
 无
 ####[调用样例](#mod_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/user/?/device_monitor.mod';
-	$rev = call($url, 'POST', array('vid' => '3', 'value' => '60'));
-	$rev = json_decode($rev, true);
-	var_dump($rev);
+	$attr_data = array(
+      array(
+          'attr_id' => 1,
+          'value'   => 'test_1',
+      ),
+      array(
+          'attr_id' => 2,
+          'value'   => 'test_2',
+      ),
+  );
+  $attr_data = json_encode($attr_data);
+  $url = '127.0.0.1:9080/user/?/device_monitor.mod';
+  $rev = call($url, 'POST', array('did' => 1, 'mid' => 1, 'attr_data' => $attr_data));
+  $rev = json_decode($rev, true);
+  var_dump($rev);
 ```
 ####[返回结果](#mod_result)
 ``` json
@@ -102,7 +114,6 @@ JSON
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 不返回数据
 
-
 ---
 ###删除设备监控器(device_monitor.del)
 
@@ -115,14 +126,14 @@ JSON
 ####[请求参数](#del_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`vid` | true | int     | 监控器属性值 ID
+`dm_id` | true | int     | 设备监控器 ID
 ####[注意事项](#del_notice)
 无
 ####[调用样例](#del_example)
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device_monitor.del';
-	$rev = call($url, 'POST', array('vid' => '3'));
+	$rev = call($url, 'POST', array('dm_id' => '1'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
