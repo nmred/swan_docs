@@ -1,4 +1,5 @@
 title: INNER API
+prev: mysql_desc
 next: device
 ---
 
