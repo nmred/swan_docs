@@ -7,12 +7,14 @@ doc_sidebar:
   安装部署相关:
     RPM 安装包发布: rpm_publish.html
     环境部署: evn_deploy.html
+    数据字典: mysql_desc.html
   Inner Api:
     介绍: inner_api.html
     设备管理: device.html
     设备监控器管理: device_monitor.html
     监控器管理: monitor.html
     监控器属性管理: monitor_attr.html
+    监控器数据项管理: monitor_metric.html
     接口错误代码说明: api_errno.html
   API 开发相关:
     介绍:
