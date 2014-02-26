@@ -20,6 +20,8 @@ JSON
 --- | --- | --- | ---
 `name` | true | string | 监控器名称，监控器名称必须是首个字符是字母，由数字、字母、下划线组成,并且至少6位
 `display_name` | false | string | 监控器描述信息
+`steps` | false | int | 监控器存储间隔时间
+
 
 ####[注意事项](#add_notice)
 
@@ -69,6 +71,8 @@ JSON
 --- | --- | --- | ---
 `mid` | true | int     | 监控器 ID
 `display_name` | false | string    | 监控器描述信息
+`steps` | false | int | 监控器存储间隔时间
+
 ####[注意事项](#mod_notice)
 无
 ####[调用样例](#mod_example)
