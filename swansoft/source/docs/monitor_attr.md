@@ -20,7 +20,7 @@ JSON
 --- | --- | --- | ---
 `name` | true | string | 监控器属性名称，监控器属性名称必须是首个字符是字母，由数字、字母、下划线组成,并且至少6位
 `mid`  | true | int    | 监控器 ID
-`form_type`  | true | int    | 监控器属性表单类型
+`form_type`  | true | int    | 监控器属性表单类型 1:input 2:select 3:check 4:textarea 
 `form_data`  | false | mixed    | 监控器属性表单数据（对于 select / checked 有效）
 `mid`  | true | int    | 监控器 ID
 `display_name` | false | string | 监控器属性描述信息
@@ -75,7 +75,7 @@ JSON
 `aid` | true | int     | 监控器属性 ID
 `name` | false | string    | 监控器属性名称
 `display_name` | false | string    | 监控器描述信息
-`form_type` | false | string    | 监控器属性表单类型
+`form_type`  | true | int    | 监控器属性表单类型 1:input 2:select 3:check 4:textarea 
 `form_data` | false | string    | 监控器属性表单数据
 ####[注意事项](#mod_notice)
 无
