@@ -123,6 +123,8 @@ host_name | varchar | false | 255 |  |   |
  --- | --- | --- | --- | ---  | --- | --- 
 dm_id | int | false | 11 |  |   | true
  | 设备监控器 id ||||||
+dm_name | varchar | false | 255 |  |   |  
+ | 设备监控器名称 ||||||
 device_id | int | false | 11 |  |   | true
  | 设备 id ||||||
 monitor_id | int | false | 11 |  |   | true
