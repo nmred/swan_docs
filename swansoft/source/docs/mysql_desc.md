@@ -137,14 +137,14 @@ monitor_id | int | false | 11 |  |   | true
  描述 | 监控器参数
  Engine |  InnoDB
  编码 | utf8
- 主键 | `value_id`,`attr_id`,`dm_id`
+ 主键 | `attr_id`,`device_id`,`dm_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
-value_id | int | false | 11 |  |   | true
- | 属性值 id ||||||
 attr_id | int | false | 11 |  |   | true
  | 监控器属性 id ||||||
+device_id | int | false | 11 |  |   | true
+ | 设备 id ||||||
 dm_id | int | false | 11 |  |   | true
  | 设备监控器 id ||||||
 value | varchar | false | 255 |  |   |  
@@ -225,6 +225,8 @@ vmin | varchar | false | 255 | U |   |
  | 数据的最小值 ||||||
 vmax | varchar | false | 255 | U |   |  
  | 数据的最大值 ||||||
+unit | varchar | false | 255 |  |   |  
+ | 数据项的单位 ||||||
 title | varchar | false | 255 |  |   |  
  | 数据项标题 ||||||
 ####monitor_archive####

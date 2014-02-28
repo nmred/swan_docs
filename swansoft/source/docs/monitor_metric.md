@@ -22,6 +22,7 @@ JSON
 `collect_every`  | true | int    | 监控器数据项轮询的时间间隔
 `time_threshold`  | false | mixed    | 监控器数据项获取数据超时时间 (ms)
 `title` | false | string | 监控器数据项描述信息
+`unit` | false | string | 监控器数据项数据单位
 `dst_type` | false | int | 监控器数据项数据处理类型
 `tmax` | false | int | 监控器数据项最大允许超时时间
 `vmin` | false | string | 监控器数据项最小允许值
@@ -82,6 +83,8 @@ JSON
 `tmax` | false | int | 监控器数据项最大允许超时时间
 `vmin` | false | string | 监控器数据项最小允许值
 `vmax` | false | string | 监控器数据项最大允许值
+`unit` | false | string | 监控器数据项数据单位
+`title` | false | string | 监控器数据项描述信息
 
 ####[注意事项](#mod_notice)
 无
@@ -211,6 +214,7 @@ JSON
 `collect_every` | string | 监控器轮询时间
 `time_threshold` | string | 监控器数据项获取数据超时时间
 `title` | string | 监控器数据项描述信息
+`unit` | string | 监控器数据项数据单位
 `dst_type` | false | int | 监控器数据项数据处理类型
 `tmax` | false | int | 监控器数据项最大允许超时时间
 `vmin` | false | string | 监控器数据项最小允许值
