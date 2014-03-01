@@ -1,5 +1,6 @@
 title: 监控器数据项管理 API
 prev: monitor_attr
+next: monitor_archive
 ---
 
 ###添加监控器数据项(monitor_metric.add)
