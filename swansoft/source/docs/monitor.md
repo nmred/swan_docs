@@ -21,7 +21,8 @@ JSON
 `name` | true | string | 监控器名称，监控器名称必须是首个字符是字母，由数字、字母、下划线组成,并且至少6位
 `display_name` | false | string | 监控器描述信息
 `steps` | false | int | 监控器存储间隔时间
-
+`store_type` | false | int | 监控器存储类型 2: rrd, 4:redis, 2+4: redis+rrd
+`monitor_type` | false | int | 监控器类型 1: core类型，该类型不能删除. 2: normal 普通监控器
 
 ####[注意事项](#add_notice)
 
@@ -72,6 +73,8 @@ JSON
 `mid` | true | int     | 监控器 ID
 `display_name` | false | string    | 监控器描述信息
 `steps` | false | int | 监控器存储间隔时间
+`store_type` | false | int | 监控器存储类型 2: rrd, 4:redis, 2+4: redis+rrd
+`monitor_type` | false | int | 监控器类型 1: core类型，该类型不能删除. 2: normal 普通监控器
 
 ####[注意事项](#mod_notice)
 无
@@ -174,21 +177,29 @@ JSON
                 "monitor_id": "2",
                 "monitor_name": "monitor_002",
                 "monitor_display_name": ""
+				`store_type`: 4,
+				`monitor_type`: 2,
             },
             {
                 "monitor_id": "3",
                 "monitor_name": "monitor_003",
                 "monitor_display_name": ""
+				`store_type`: 4,
+				`monitor_type`: 2,
             },
             {
                 "monitor_id": "4",
                 "monitor_name": "monitor_004",
-                "monitor_display_name": ""
+                "monitor_display_name": "",
+				`store_type`: 4,
+				`monitor_type`: 2,
             },
             {
                 "monitor_id": "5",
                 "monitor_name": "monitor_005",
                 "monitor_display_name": ""
+				`store_type`: 4,
+				`monitor_type`: 2,
             }
         ],
         "count": "9"
@@ -204,6 +215,6 @@ JSON
 `monitor_id` | int | 监控器 ID
 `monitor_name` | string | 监控器名称
 `monitor_display_name` | string | 监控器描述信息
-
-
+`store_type` | int | 监控器存储类型 2: rrd, 4:redis, 2+4: redis+rrd
+`monitor_type` | int | 监控器类型 1: core类型，该类型不能删除. 2: normal 普通监控器
 

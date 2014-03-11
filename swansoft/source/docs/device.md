@@ -21,6 +21,7 @@ JSON
 `name` | true | string | 设备名称，设备名称必须是首个字符是字母，由数字、字母、下划线组成,并且至少6位
 `host_name` | true | string | 设备主机名
 `display_name` | false | string | 设备描述信息
+`heartbeat_time` | false | string | 设备监控的心跳线超时时间
 
 ####[注意事项](#add_notice)
 
@@ -71,6 +72,7 @@ JSON
 `did` | true | int     | 设备 ID
 `host_name` | false | string | 设备主机名
 `display_name` | false | string    | 设备描述信息
+`heartbeat_time` | false | string | 设备监控的心跳线超时时间
 ####[注意事项](#mod_notice)
 无
 ####[调用样例](#mod_example)
@@ -174,25 +176,29 @@ JSON
 					"device_id": "1",
 					"device_name": "device_001",
 					"host_name": "192.168.1.132",
-					"device_display_name": ""
+					"device_display_name": "",
+					'heartbeat_time': '20',
 				},
 				{
 					"device_id": "2",
 					"device_name": "device_002",
 					"host_name": "192.168.1.132",
-					"device_display_name": ""
+					"device_display_name": "",
+					'heartbeat_time': '20',
 				},
 				{
 					"device_id": "3",
 					"device_name": "device_003",
 					"host_name": "192.168.1.132",
 					"device_display_name": "device_desc_test"
+					'heartbeat_time': '20',
 				},
 				{
 					"device_id": "4",
 					"device_name": "device_004",
 					"host_name": "192.168.1.132",
-					"device_display_name": ""
+					"device_display_name": "",
+					'heartbeat_time': '20',
 				}
 			],
 			"count": "4"
