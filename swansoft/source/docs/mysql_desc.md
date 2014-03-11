@@ -109,6 +109,8 @@ device_display_name | varchar | false | 255 |  |   |
  | 设备显示名称 ||||||
 host_name | varchar | false | 255 |  |   |  
  | 设备主机地址 ||||||
+heartbeat_time | int | false | 11 | 300 |   | true
+ | 用来检测服务器心跳的阀值, 单位（秒） ||||||
 ####device_monitor####
 
  - | 属性名
@@ -117,7 +119,7 @@ host_name | varchar | false | 255 |  |   |
  描述 | 监控的设备的监控器
  Engine |  InnoDB
  编码 | utf8
- 主键 | `dm_id`
+ 主键 | `dm_id`,`device_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
@@ -169,6 +171,10 @@ monitor_display_name | varchar | false | 255 |  |   |
  | 监控器显示名称 ||||||
 steps | int | false | 11 |  |   | true
  | 监控器存储 rrd 的间隔时间 (秒) ||||||
+store_type | tinyint | false | 1 | 2 |   | true
+ | 数据存储引擎 2: rrd存储 4: redis存储 , 如果是选项之和说明是 rrd + redis ||||||
+monitor_type | tinyint | false | 1 | 2 |   | true
+ | 监控器类型：1: core 该类型在添加设备的时候会一并添加进去，不允许删除 2：normal 普通监控器 ||||||
 ####monitor_attribute####
 
  - | 属性名
