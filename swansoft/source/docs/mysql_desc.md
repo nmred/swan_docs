@@ -39,20 +39,20 @@ table_name | varchar | false | 64 |  |   |
  | 维护序列号的表名称 ||||||
 sequence_id | int | false | 11 |  |   | true
  | 自增长 ID ||||||
-####sequence_monitor####
+####sequence_madapter####
 
  - | 属性名
 --- | --- 
- 表名 |sequence_monitor
- 描述 | 监控器数据表的唯一序列号
+ 表名 |sequence_madapter
+ 描述 | 监控适配器数据表的唯一序列号
  Engine |  InnoDB
  编码 | utf8
- 主键 | `monitor_id`,`table_name`
+ 主键 | `madapter_id`,`table_name`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
-monitor_id | int | false | 11 |  |   | true
- | 设备 ID ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 ID ||||||
 table_name | varchar | false | 64 |  |   |  
  | 维护序列号的表名称 ||||||
 sequence_id | int | false | 11 |  |   | true
@@ -116,7 +116,7 @@ heartbeat_time | int | false | 11 | 300 |   | true
  - | 属性名
 --- | --- 
  表名 |device_monitor
- 描述 | 监控的设备的监控器
+ 描述 | 监控的设备的监控适配器
  Engine |  InnoDB
  编码 | utf8
  主键 | `dm_id`,`device_id`
@@ -124,19 +124,19 @@ heartbeat_time | int | false | 11 | 300 |   | true
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
 dm_id | int | false | 11 |  |   | true
- | 设备监控器 id ||||||
+ | 设备监控适配器 id ||||||
 dm_name | varchar | false | 255 |  |   |  
- | 设备监控器名称 ||||||
+ | 设备监控适配器名称 ||||||
 device_id | int | false | 11 |  |   | true
  | 设备 id ||||||
-monitor_id | int | false | 11 |  |   | true
- | 监控器 id ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 id ||||||
 ####device_monitor_params####
 
  - | 属性名
 --- | --- 
  表名 |device_monitor_params
- 描述 | 监控器参数
+ 描述 | 监控适配器参数
  Engine |  InnoDB
  编码 | utf8
  主键 | `attr_id`,`device_id`,`dm_id`
@@ -144,53 +144,53 @@ monitor_id | int | false | 11 |  |   | true
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
 attr_id | int | false | 11 |  |   | true
- | 监控器属性 id ||||||
+ | 监控适配器属性 id ||||||
 device_id | int | false | 11 |  |   | true
  | 设备 id ||||||
 dm_id | int | false | 11 |  |   | true
- | 设备监控器 id ||||||
+ | 设备监控适配器 id ||||||
 value | varchar | false | 255 |  |   |  
  | 属性值 ||||||
-####monitor_basic####
+####madapter_basic####
 
  - | 属性名
 --- | --- 
- 表名 |monitor_basic
- 描述 | 监控器管理
+ 表名 |madapter_basic
+ 描述 | 监控适配器管理
  Engine |  InnoDB
  编码 | utf8
- 主键 | `monitor_id`
+ 主键 | `madapter_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
-monitor_id | int | false | 11 |  |   | true
- | 监控器 id ||||||
-monitor_name | varchar | false | 255 |  |   |  
- | 监控器名称 ||||||
-monitor_display_name | varchar | false | 255 |  |   |  
- | 监控器显示名称 ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 id ||||||
+madapter_name | varchar | false | 255 |  |   |  
+ | 监控适配器名称 ||||||
+madapter_display_name | varchar | false | 255 |  |   |  
+ | 监控适配器显示名称 ||||||
 steps | int | false | 11 |  |   | true
- | 监控器存储 rrd 的间隔时间 (秒) ||||||
+ | 监控适配器存储 rrd 的间隔时间 (秒) ||||||
 store_type | tinyint | false | 1 | 2 |   | true
  | 数据存储引擎 2: rrd存储 4: redis存储 , 如果是选项之和说明是 rrd + redis ||||||
-monitor_type | tinyint | false | 1 | 2 |   | true
- | 监控器类型：1: core 该类型在添加设备的时候会一并添加进去，不允许删除 2：normal 普通监控器 ||||||
-####monitor_attribute####
+madapter_type | tinyint | false | 1 | 2 |   | true
+ | 监控适配器类型：1: core 该类型在添加设备的时候会一并添加进去，不允许删除 2：normal 普通监控适配器 ||||||
+####madapter_attribute####
 
  - | 属性名
 --- | --- 
- 表名 |monitor_attribute
- 描述 | 监控器属性管理
+ 表名 |madapter_attribute
+ 描述 | 监控适配器属性管理
  Engine |  InnoDB
  编码 | utf8
- 主键 | `attr_id`,`monitor_id`
+ 主键 | `attr_id`,`madapter_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
 attr_id | int | false | 11 |  |   | true
- | 监控器属性 id ||||||
-monitor_id | int | false | 11 |  |   | true
- | 监控器 id ||||||
+ | 监控适配器属性 id ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 id ||||||
 attr_name | varchar | false | 255 |  |   |  
  | 属性名称 ||||||
 attr_display_name | varchar | false | 255 |  |   |  
@@ -201,15 +201,15 @@ form_data | varchar | false | 255 |  |   |
  | 属性表单数据 ||||||
 attr_default | varchar | false | 255 |  |   |  
  | 属性默认值 ||||||
-####monitor_metric####
+####madapter_metric####
 
  - | 属性名
 --- | --- 
- 表名 |monitor_metric
- 描述 | 监控器收集数据项
+ 表名 |madapter_metric
+ 描述 | 监控适配器收集数据项
  Engine |  InnoDB
  编码 | utf8
- 主键 | `metric_id`,`monitor_id`
+ 主键 | `metric_id`,`madapter_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
@@ -217,8 +217,8 @@ metric_id | int | false | 11 |  |   | true
  | 数据项 id ||||||
 metric_name | varchar | false | 255 |  |   |  
  | 数据项名称 ||||||
-monitor_id | int | false | 11 |  |   | true
- | 监控器 id ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 id ||||||
 collect_every | int | false | 11 |  |   | true
  | 轮询周期 ||||||
 time_threshold | int | false | 11 |  |   | true
@@ -235,22 +235,22 @@ unit | varchar | false | 255 |  |   |
  | 数据项的单位 ||||||
 title | varchar | false | 255 |  |   |  
  | 数据项标题 ||||||
-####monitor_archive####
+####madapter_archive####
 
  - | 属性名
 --- | --- 
- 表名 |monitor_archive
- 描述 | 监控器数据归档规则
+ 表名 |madapter_archive
+ 描述 | 监控适配器数据归档规则
  Engine |  InnoDB
  编码 | utf8
- 主键 | `archive_id`,`monitor_id`
+ 主键 | `archive_id`,`madapter_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
 archive_id | int | false | 11 |  |   | true
  | 归档 id ||||||
-monitor_id | int | false | 11 |  |   | true
- | 监控器 id ||||||
+madapter_id | int | false | 11 |  |   | true
+ | 监控适配器 id ||||||
 title | varchar | false | 255 |  |   |  
  | 归档规则标题 ||||||
 cf_type | int | false | 11 |  |   | true
@@ -266,7 +266,7 @@ rows | int | false | 11 |  |   | true
  - | 属性名
 --- | --- 
  表名 |graph_basic
- 描述 | 监控器绘图配置
+ 描述 | 监控适配器绘图配置
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`
@@ -296,7 +296,7 @@ end | int | false | 11 |  |   | true
  - | 属性名
 --- | --- 
  表名 |graph_def
- 描述 | 监控器绘图数据项定义
+ 描述 | 监控适配器绘图数据项定义
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`,`def_id`
@@ -318,7 +318,7 @@ cf_type | tinyint | false | 1 |  |   | true
  - | 属性名
 --- | --- 
  表名 |graph_cdef
- 描述 | 监控器绘图计算数据项定义
+ 描述 | 监控适配器绘图计算数据项定义
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`,`cdef_id`
@@ -338,7 +338,7 @@ operator | varchar | false | 255 |  |   |
  - | 属性名
 --- | --- 
  表名 |graph_graph
- 描述 | 监控器绘图定义
+ 描述 | 监控适配器绘图定义
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`,`dgraph_id`
@@ -360,7 +360,7 @@ color | varchar | false | 255 |  |   |
  - | 属性名
 --- | --- 
  表名 |graph_comment
- 描述 | 监控器绘图注释性文字定义
+ 描述 | 监控适配器绘图注释性文字定义
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`,`comment_id`
@@ -378,7 +378,7 @@ comment | varchar | false | 255 |  |   |
  - | 属性名
 --- | --- 
  表名 |graph_gprint
- 描述 | 监控器绘图格式化的文字信息
+ 描述 | 监控适配器绘图格式化的文字信息
  Engine |  InnoDB
  编码 | utf8
  主键 | `graph_id`,`gprint_id`
