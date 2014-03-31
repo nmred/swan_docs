@@ -116,16 +116,16 @@ heartbeat_time | int | false | 11 | 300 |   | true
  - | 属性名
 --- | --- 
  表名 |device_monitor
- 描述 | 监控的设备的监控适配器
+ 描述 | 设备监控器
  Engine |  InnoDB
  编码 | utf8
- 主键 | `dm_id`,`device_id`
+ 主键 | `monitor_id`,`device_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
-dm_id | int | false | 11 |  |   | true
- | 设备监控适配器 id ||||||
-dm_name | varchar | false | 255 |  |   |  
+monitor_id | int | false | 11 |  |   | true
+ | 设备监控器 id ||||||
+monitor_name | varchar | false | 255 |  |   |  
  | 设备监控适配器名称 ||||||
 device_id | int | false | 11 |  |   | true
  | 设备 id ||||||
@@ -136,19 +136,19 @@ madapter_id | int | false | 11 |  |   | true
  - | 属性名
 --- | --- 
  表名 |device_monitor_params
- 描述 | 监控适配器参数
+ 描述 | 监控器参数
  Engine |  InnoDB
  编码 | utf8
- 主键 | `attr_id`,`device_id`,`dm_id`
+ 主键 | `attr_id`,`device_id`,`monitor_id`
 
  字段名 | 类型 | nullable | 宽度 | 默认值  | auto | unsigned 
  --- | --- | --- | --- | ---  | --- | --- 
 attr_id | int | false | 11 |  |   | true
- | 监控适配器属性 id ||||||
+ | 监控器属性 id ||||||
 device_id | int | false | 11 |  |   | true
  | 设备 id ||||||
-dm_id | int | false | 11 |  |   | true
- | 设备监控适配器 id ||||||
+monitor_id | int | false | 11 |  |   | true
+ | 设备监控器 id ||||||
 value | varchar | false | 255 |  |   |  
  | 属性值 ||||||
 ####madapter_basic####
