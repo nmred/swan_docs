@@ -1,11 +1,11 @@
-title: 监控器 archive 管理 API
-prev: monitor_archive
+title: 监控适配器 archive 管理 API
+prev: madapter_archive
 ---
 
-###添加监控器 archive (monitor_archive.add)
+###添加监控适配器 archive (madapter_archive.add)
 
 ####[URL](#add_url) 
-http://127.0.0.1/dev/?/monitor_archive.add
+http://127.0.0.1/dev/?/madapter_archive.add
 
 ####[请求方式](#add_post)
 POST
@@ -17,12 +17,12 @@ JSON
 
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`mid`  | true | int    | 监控器 ID
-`cf_type`  | true | int    | 监控器 archive 计算公式
-`xff`  | true | mixed    | 监控器 archive 判断数据正确性的阀值
-`steps`  | true | mixed    | 监控器 archive 合并的时间点个数
-`rows`  | true | mixed    | 监控器 archive 合并最终最多的条数
-`title`  | true | mixed    | 监控器 archive 的描述信息
+`madapter_id`  | true | int    | 监控适配器 ID
+`cf_type`  | true | int    | 监控适配器 archive 计算公式
+`xff`  | true | mixed    | 监控适配器 archive 判断数据正确性的阀值
+`steps`  | true | mixed    | 监控适配器 archive 合并的时间点个数
+`rows`  | true | mixed    | 监控适配器 archive 合并最终最多的条数
+`title`  | true | mixed    | 监控适配器 archive 的描述信息
 
 
 ####[注意事项](#add_notice)
@@ -33,8 +33,8 @@ JSON
 
 ```
 	<?php
-	$url = '127.0.0.1:9080/dev/?/monitor_archive.add';
-	$rev = call($url, 'POST', array('mid' => 1, 'cf_type' => 2, 'xff' => 0.5, 'title' => 'test', 'steps' => 300, 'rows' => 20));
+	$url = '127.0.0.1:9080/dev/?/madapter_archive.add';
+	$rev = call($url, 'POST', array('madapter_id' => 1, 'cf_type' => 2, 'xff' => 0.5, 'title' => 'test', 'steps' => 300, 'rows' => 20));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -43,10 +43,10 @@ JSON
 ``` json
 	{
 		"code": 10000,
-		"msg": "add monitor archive  success.",
+		"msg": "add madapter archive  success.",
 		"data": {
 			"archive_id": "1",
-			"monitor_id": "1"
+			"madapter_id": "1"
 		}
 	}
 ```
@@ -56,14 +56,14 @@ JSON
 `code` | string | 返回接口的状态码具体的状态码见 [接口错误码说明](api_errno.html) 
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 返回的数据，如果错误返回 NULL
-`archive_id` | int | 返回监控器 archive ID
-`monitor_id` | int | 返回监控器 ID
+`archive_id` | int | 返回监控适配器 archive ID
+`madapter_id` | int | 返回监控适配器 ID
 
 ---
-###修改监控器 archive (monitor_archive.mod)
+###修改监控适配器 archive (madapter_archive.mod)
 
 ####[URL](#mod_url) 
-http://127.0.0.1/dev/?/monitor_archive.mod
+http://127.0.0.1/dev/?/madapter_archive.mod
 ####[请求方式](#mod_post)
 POST
 ####[支持格式](#mod_json)
@@ -71,21 +71,21 @@ JSON
 ####[请求参数](#mod_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`mid`  | true | int    | 监控器 ID
-`arid`  | true | int    | 监控器 archive ID
-`cf_type`  | true | int    | 监控器 archive 计算公式
-`xff`  | true | mixed    | 监控器 archive 判断数据正确性的阀值
-`steps`  | true | mixed    | 监控器 archive 合并的时间点个数
-`rows`  | true | mixed    | 监控器 archive 合并最终最多的条数
-`title`  | true | mixed    | 监控器 archive 的描述信息
+`madapter_id`  | true | int    | 监控适配器 ID
+`arid`  | true | int    | 监控适配器 archive ID
+`cf_type`  | true | int    | 监控适配器 archive 计算公式
+`xff`  | true | mixed    | 监控适配器 archive 判断数据正确性的阀值
+`steps`  | true | mixed    | 监控适配器 archive 合并的时间点个数
+`rows`  | true | mixed    | 监控适配器 archive 合并最终最多的条数
+`title`  | true | mixed    | 监控适配器 archive 的描述信息
 
 ####[注意事项](#mod_notice)
 无
 ####[调用样例](#mod_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/dev/?/monitor_archive.mod';
-	$rev = call($url, 'POST', array('arid' => 6, 'mid' => 1, 'cf_type' => 3, 'xff' => 0.5, 'title' => 'test', 'steps' => 300, 'rows' = 40));
+	$url = '127.0.0.1:9080/dev/?/madapter_archive.mod';
+	$rev = call($url, 'POST', array('arid' => 6, 'madapter_id' => 1, 'cf_type' => 3, 'xff' => 0.5, 'title' => 'test', 'steps' => 300, 'rows' = 40));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -94,7 +94,7 @@ JSON
 
 	{
 		"code": 10000,
-		"msg": "mod monitor archive success.",
+		"msg": "mod madapter archive success.",
 		"data": Null 
 	}
 
@@ -108,10 +108,10 @@ JSON
 
 
 ---
-###删除监控器 archive (monitor_archive.del)
+###删除监控适配器 archive (madapter_archive.del)
 
 ####[URL](#del_url) 
-http://127.0.0.1/dev/?/monitor_archive.del
+http://127.0.0.1/dev/?/madapter_archive.del
 ####[请求方式](#del_post)
 POST
 ####[支持格式](#del_json)
@@ -119,15 +119,15 @@ JSON
 ####[请求参数](#del_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`mid` | true | int     | 监控器 ID
-`arid` | true | int     | 监控器 archive ID
+`madapter_id` | true | int     | 监控适配器 ID
+`arid` | true | int     | 监控适配器 archive ID
 ####[注意事项](#del_notice)
 无
 ####[调用样例](#del_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/dev/?/monitor_archive.del';
-	$rev = call($url, 'POST', array('mid' => '3', 'arid' => '1'));
+	$url = '127.0.0.1:9080/dev/?/madapter_archive.del';
+	$rev = call($url, 'POST', array('madapter_id' => '3', 'arid' => '1'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -135,7 +135,7 @@ JSON
 ``` json
 	{
 		"code": 10000,
-		"msg": "delete monitor archive success.",
+		"msg": "delete madapter archive success.",
 		"data": Null 
 	}
 ```
@@ -147,10 +147,10 @@ JSON
 `data` | array NULL  | 不返回数据
 
 ---
-###获取监控器 archive (monitor_archive.json)
+###获取监控适配器 archive (madapter_archive.json)
 
 ####[URL](#json_url) 
-http://127.0.0.1/dev/?/monitor_archive.json
+http://127.0.0.1/dev/?/madapter_archive.json
 ####[请求方式](#json_post)
 POST
 ####[支持格式](#json_json)
@@ -158,8 +158,8 @@ JSON
 ####[请求参数](#json_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`mid` | true | int     | 监控器 ID
-`arid` | false | int     | 监控器 archive ID
+`madapter_id` | true | int     | 监控适配器 ID
+`arid` | false | int     | 监控适配器 archive ID
 `page` | false | int     | 分页的页码
 `page_count` | false | int     | 每页的个数
 ####[注意事项](#json_notice)
@@ -167,8 +167,8 @@ JSON
 ####[调用样例](#json_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/dev/?/monitor_archive.json';
-	$rev = call($url, 'POST', array('arid' => 3, 'mid' => 1, 'page' => '1', 'page_count' => 20));
+	$url = '127.0.0.1:9080/dev/?/madapter_archive.json';
+	$rev = call($url, 'POST', array('arid' => 3, 'madapter_id' => 1, 'page' => '1', 'page_count' => 20));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -176,12 +176,12 @@ JSON
 ``` json
 	{
 		"code": 10000,
-		"msg": "get monitor archive success.",
+		"msg": "get madapter archive success.",
 		"data": {
 			"result": [
 				{
 					"archive_id": "3",
-					"monitor_id": "1",
+					"madapter_id": "1",
 					"title": "test",
 					"cf_type": "1",
 					"xff": "0.5",
@@ -190,7 +190,7 @@ JSON
 				},
 				{
 					"archive_id": "5",
-					"monitor_id": "1",
+					"madapter_id": "1",
 					"title": "test",
 					"cf_type": "1",
 					"xff": "0.5",
@@ -208,10 +208,10 @@ JSON
 `code` | string | 返回接口的状态码具体的状态码见 [接口错误码说明](api_errno.html) 
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 不返回数据
-`monitor_id`  | true | int    | 监控器 ID
-`archive_id`  | true | int    | 监控器 archive ID
-`cf_type`  | true | int    | 监控器 archive 计算公式
-`xff`  | true | mixed    | 监控器 archive 判断数据正确性的阀值
-`steps`  | true | mixed    | 监控器 archive 合并的时间点个数
-`rows`  | true | mixed    | 监控器 archive 合并最终最多的条数
-`title`  | true | mixed    | 监控器 archive 的描述信息
+`madapter_id`  | true | int    | 监控适配器 ID
+`archive_id`  | true | int    | 监控适配器 archive ID
+`cf_type`  | true | int    | 监控适配器 archive 计算公式
+`xff`  | true | mixed    | 监控适配器 archive 判断数据正确性的阀值
+`steps`  | true | mixed    | 监控适配器 archive 合并的时间点个数
+`rows`  | true | mixed    | 监控适配器 archive 合并最终最多的条数
+`title`  | true | mixed    | 监控适配器 archive 的描述信息

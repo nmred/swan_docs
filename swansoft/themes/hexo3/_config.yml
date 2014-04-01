@@ -11,11 +11,11 @@ doc_sidebar:
   Inner Api:
     介绍: inner_api.html
     设备管理: device.html
-    设备监控器管理: device_monitor.html
-    监控器管理: monitor.html
-    监控器属性管理: monitor_attr.html
-    监控器数据项管理: monitor_metric.html
-    监控器 archive 管理: monitor_archive.html
+    监控器管理: device_monitor.html
+    监控适配器管理: madapter.html
+    监控适配器属性管理: madapter_attr.html
+    监控适配器数据项管理: madapter_metric.html
+    监控适配器 archive 管理: madapter_archive.html
     接口错误代码说明: api_errno.html
   API 开发相关:
     介绍:

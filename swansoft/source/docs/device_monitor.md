@@ -1,5 +1,5 @@
 title: 设备监控器管理 API
-next: monitor
+next: madapter
 prev: device
 ---
 
@@ -18,9 +18,9 @@ JSON
 
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did` | true | int | 设备 ID
-`mid` | true | int | 监控器 ID
-`dm_name` | true | string | 设备监控器名称
+`device_id` | true | int | 设备 ID
+`madapter_id` | true | int | 监控器 ID
+`monitor_name` | true | string | 设备监控器名称
 `attr_data` | false | mixed | 监控器属性值, 注意：此参数为 JSON 字符串
 
 ####[注意事项](#add_notice)
@@ -43,7 +43,7 @@ JSON
 		),
 	);
 	$attr_data = json_encode($attr_data);
-	$rev = call($url, 'POST', array('mid' => 1, 'did' => 1, 'attr_data' => $attr_data, 'db_name' => 'test_dm'));
+	$rev = call($url, 'POST', array('madapter_id' => 1, 'device_id' => 1, 'attr_data' => $attr_data, 'db_name' => 'test_dm'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 
@@ -63,7 +63,7 @@ JSON
 `code` | string | 返回接口的状态码具体的状态码见 [接口错误码说明](api_errno.html) 
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 返回的数据，如果错误返回 NULL
-`dm_id` | int | 返回该设备监控器 ID
+`monitor_id` | int | 返回该设备监控器 ID
 `device_id` | int | 返回该设备 ID
 
 ---
@@ -78,9 +78,9 @@ JSON
 ####[请求参数](#mod_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did` | true | int     | 设备 ID
-`mid` | true | int     | 监控器 ID
-`dm_id` | true | string | 设备监控器 ID
+`device_id` | true | int     | 设备 ID
+`madapter_id` | true | int     | 监控器 ID
+`monitor_id` | true | string | 设备监控器 ID
 `attr_data` | false | string    | 设备监控器的属性 params 值
 ####[注意事项](#mod_notice)
 无
@@ -99,7 +99,7 @@ JSON
   );
   $attr_data = json_encode($attr_data);
   $url = '127.0.0.1:9080/user/?/device_monitor.mod';
-  $rev = call($url, 'POST', array('did' => 1, 'mid' => 1, 'attr_data' => $attr_data, 'dm_id' => 1));
+  $rev = call($url, 'POST', array('device_id' => 1, 'madapter_id' => 1, 'attr_data' => $attr_data, 'monitor_id' => 1));
   $rev = json_decode($rev, true);
   var_dump($rev);
 ```
@@ -132,15 +132,15 @@ JSON
 ####[请求参数](#del_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`dm_id` | true | int     | 设备监控器 ID
-`did` | true | int     | 设备 ID
+`monitor_id` | true | int     | 设备监控器 ID
+`device_id` | true | int     | 设备 ID
 ####[注意事项](#del_notice)
 无
 ####[调用样例](#del_example)
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device_monitor.del';
-	$rev = call($url, 'POST', array('dm_id' => '1', 'did' => 1));
+	$rev = call($url, 'POST', array('monitor_id' => '1', 'device_id' => 1));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -171,7 +171,7 @@ JSON
 ####[请求参数](#json_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did`  | true  | int  | 设备 ID
+`device_id`  | true  | int  | 设备 ID
 `page` | false | int     | 分页的页码
 `page_count` | false | int     | 每页的个数
 ####[注意事项](#json_notice)
@@ -180,7 +180,7 @@ JSON
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device.json';
-	$rev = call($url, 'POST', array('did' => '3'));
+	$rev = call($url, 'POST', array('device_id' => '3'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -192,8 +192,8 @@ JSON
 		"data": {
 			"result": [
 				{
-					"dm_id": "11",
-					"dm_name": "test_name",
+					"monitor_id": "11",
+					"monitor_name": "test_name",
 					"device_id": "1",
 					"monitor_id": "1",
 					"monitor_name": "apache",
@@ -212,8 +212,8 @@ JSON
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 不返回数据
 `device_id` | int | 设备 ID
-`dm_id` | int | 设备监控器 ID
-`dm_name` | int | 设备监控器名称
+`monitor_id` | int | 设备监控器 ID
+`monitor_name` | int | 设备监控器名称
 `monitor_id` | int | 监控器 ID
 `steps` | int | 监控器存储间隔
 `monitor_name` | string | 监控器名称
@@ -234,9 +234,9 @@ JSON
 ####[请求参数](#info_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did`  | true  | int  | 设备 ID
-`mid`  | true  | int  | 监控器 ID
-`dm_id`  | true  | int  | 设备监控器 ID
+`device_id`  | true  | int  | 设备 ID
+`madapter_id`  | true  | int  | 监控器 ID
+`monitor_id`  | true  | int  | 设备监控器 ID
 `page` | false | int     | 分页的页码
 `page_count` | false | int     | 每页的个数
 ####[注意事项](#info_notice)
@@ -245,7 +245,7 @@ JSON
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device_monitor.info';
-	$rev = call($url, 'POST', array('did' => '1', 'mid' => '1'));
+	$rev = call($url, 'POST', array('device_id' => '1', 'madapter_id' => '1'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -257,8 +257,8 @@ JSON
 		"data": {
 			"result": [
 				{
-					"dm_id": "11",
-					"dm_name": "test_name",
+					"monitor_id": "11",
+					"monitor_name": "test_name",
 					"device_id": "1",
 					"monitor_id": "1",
 					"attr_id": "1",
@@ -270,8 +270,8 @@ JSON
 					"attr_display_name": ""
 				},
 				{
-					"dm_id": "11",
-					"dm_name": "test_name",
+					"monitor_id": "11",
+					"monitor_name": "test_name",
 					"device_id": "1",
 					"monitor_id": "1",
 					"attr_id": "2",
@@ -294,8 +294,8 @@ JSON
 `msg`  | string | 接口的返回描述信息
 `data` | array NULL  | 不返回数据
 `device_id` | int | 设备 ID
-`dm_id` | int | 设备监控器 ID
-`dm_name` | string | 设备监控器名称
+`monitor_id` | int | 设备监控器 ID
+`monitor_name` | string | 设备监控器名称
 `monitor_id` | int | 监控器 ID
 `attr_id` | int | 监控器属性 ID
 `value` | string | 属性值

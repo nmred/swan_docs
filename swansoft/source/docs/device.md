@@ -69,7 +69,7 @@ JSON
 ####[请求参数](#mod_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did` | true | int     | 设备 ID
+`device_id` | true | int     | 设备 ID
 `host_name` | false | string | 设备主机名
 `display_name` | false | string    | 设备描述信息
 `heartbeat_time` | false | string | 设备监控的心跳线超时时间
@@ -79,7 +79,7 @@ JSON
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device.mod';
-	$rev = call($url, 'POST', array('did' => '3', 'display_name' => 'device_0001_desc'));
+	$rev = call($url, 'POST', array('device_id' => '3', 'display_name' => 'device_0001_desc'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -113,14 +113,14 @@ JSON
 ####[请求参数](#del_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`did` | true | int     | 设备 ID
+`device_id` | true | int     | 设备 ID
 ####[注意事项](#del_notice)
 无
 ####[调用样例](#del_example)
 ```
 	<?php
 	$url = '127.0.0.1:9080/user/?/device.del';
-	$rev = call($url, 'POST', array('did' => '3'));
+	$rev = call($url, 'POST', array('device_id' => '3'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```

@@ -82,7 +82,7 @@ JSON
 ```
 	<?php
 	$url = '127.0.0.1:9080/dev/?/madapter.mod';
-	$rev = call($url, 'POST', array('mid' => '3', 'display_name' => 'madapter_0001_desc'));
+	$rev = call($url, 'POST', array('madapter_id' => '3', 'display_name' => 'madapter_0001_desc'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -116,14 +116,14 @@ JSON
 ####[请求参数](#del_param)
   | 必选 | 类型及范围 | 说明
 --- | --- | --- | ---
-`mid` | true | int     | 监控适配器 ID
+`madapter_id` | true | int     | 监控适配器 ID
 ####[注意事项](#del_notice)
 无
 ####[调用样例](#del_example)
 ```
 	<?php
 	$url = '127.0.0.1:9080/dev/?/madapter.del';
-	$rev = call($url, 'POST', array('mid' => '3'));
+	$rev = call($url, 'POST', array('madapter_id' => '3'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
 ```
@@ -161,7 +161,7 @@ JSON
 ####[调用样例](#json_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/user/?/device.json';
+	$url = '127.0.0.1:9080/dev/?/madapter.json';
 	$rev = call($url, 'POST', array('page' => '1'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
