@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RPM 安装包发布 | Swan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/smeta/css/style.css">
+  <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body class="page">
+  <header id="header">
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/smeta/" id="logo">Swan</a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            <li class="main-nav-item">
+              <a href="/" class="main-nav-link">主页</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/smeta/docs/" class="main-nav-link current">文档</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="https://github.com/nmred/sf1" class="main-nav-link">仓库</a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <article class="page">
+  <header id="page-banner">
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">RPM 安装包发布</h1>
+    </div>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner">
+  <select id="page-mobile-menu">
+    <option value="">Navigate...</option>
+    
+      <optgroup label="安装部署相关">
+        
+          <option value="/smeta/docs/rpm_publish.html">RPM 安装包发布</option>
+        
+          <option value="/smeta/docs/evn_deploy.html">环境部署</option>
+        
+          <option value="/smeta/docs/mysql_desc.html">数据字典</option>
+        
+      </optgroup>
+    
+      <optgroup label="Inner Api">
+        
+          <option value="/smeta/docs/inner_api.html">介绍</option>
+        
+          <option value="/smeta/docs/device.html">设备管理</option>
+        
+          <option value="/smeta/docs/device_monitor.html">监控器管理</option>
+        
+          <option value="/smeta/docs/madapter.html">监控适配器管理</option>
+        
+          <option value="/smeta/docs/madapter_attr.html">监控适配器属性管理</option>
+        
+          <option value="/smeta/docs/madapter_metric.html">监控适配器数据项管理</option>
+        
+          <option value="/smeta/docs/madapter_archive.html">监控适配器 archive 管理</option>
+        
+          <option value="/smeta/docs/api_errno.html">接口错误代码说明</option>
+        
+      </optgroup>
+    
+      <optgroup label="API 开发相关">
+        
+          <option value="/smeta/docs/null">介绍</option>
+        
+          <option value="/smeta/docs/null">路由规则及设置</option>
+        
+          <option value="/smeta/docs/null">函数及常用 LIB 的调用</option>
+        
+      </optgroup>
+    
+  </select>
+</div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#-rpm-"><span class="toc-number">1.</span> <span class="toc-text">最新 RPM 包下载</span></a></li><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#smeta-0-1-0-beta-i386-rpm-http-pan-baidu-com-s-1bnb5mk3-2014-04-01-"><span class="toc-number">1.1.</span> <span class="toc-text"> (2014-04-01)</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">其他</span></a></li></ol>
+      </div>
+      <div class="page-entry">
+        <h3 id="-rpm-">最新 RPM 包下载</h3>
+<ul>
+<li><h4 id="smeta-0-1-0-beta-i386-rpm-http-pan-baidu-com-s-1bnb5mk3-2014-04-01-">smeta-0.1.0-beta.i386.rpm <a href="http://pan.baidu.com/s/1bnb5mk3" target="_blank">下载</a> (2014-04-01)</h4>
+</li>
+</ul>
+<blockquote>
+<p>增加 rrdtool 中间件</p>
+<p>增加 PHPD swdata 模块</p>
+<p>重构监控适配器相关 API 接口</p>
+<p>添加监控中心的 server</p>
+<p>添加 gearman</p>
+<p>添加 nginx</p>
+<p>添加 redis</p>
+<p>添加 rrdtool</p>
+<p>添加 mysql</p>
+<p>增加 rrdtool PHP 扩展</p>
+<p>V0.1.0 首次 smeta.smond.swanweb 统一主版本号</p>
+</blockquote>
+<h3 id="-">其他</h3>
+<p>RPM 目前采用迭代的方式出包，一般在有 opt 更新的时候才会出新包，日常更新不采用 RPM， 详细见 <a href="evn_deploy.html">环境部署</a></p>
+<p>具体打包流程见: <a href="">RPM打包流程</a></p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2014-04-01T15:31:25.000Z">Last updated: 4月 1, 2014</time>
+        <a href="/smeta/docs/index.html" id="page-footer-prev" class="page-footer-link">Prev</a>
+        <a href="/smeta/docs/evn_deploy.html" id="page-footer-next" class="page-footer-link">Next</a>
+      </footer>
+    </div>
+    <aside id="sidebar">
+  
+    <strong class="sidebar-title">安装部署相关</strong>
+    
+      <a href="/smeta/docs/rpm_publish.html" class="sidebar-link current">RPM 安装包发布</a>
+    
+      <a href="/smeta/docs/evn_deploy.html" class="sidebar-link">环境部署</a>
+    
+      <a href="/smeta/docs/mysql_desc.html" class="sidebar-link">数据字典</a>
+    
+  
+    <strong class="sidebar-title">Inner Api</strong>
+    
+      <a href="/smeta/docs/inner_api.html" class="sidebar-link">介绍</a>
+    
+      <a href="/smeta/docs/device.html" class="sidebar-link">设备管理</a>
+    
+      <a href="/smeta/docs/device_monitor.html" class="sidebar-link">监控器管理</a>
+    
+      <a href="/smeta/docs/madapter.html" class="sidebar-link">监控适配器管理</a>
+    
+      <a href="/smeta/docs/madapter_attr.html" class="sidebar-link">监控适配器属性管理</a>
+    
+      <a href="/smeta/docs/madapter_metric.html" class="sidebar-link">监控适配器数据项管理</a>
+    
+      <a href="/smeta/docs/madapter_archive.html" class="sidebar-link">监控适配器 archive 管理</a>
+    
+      <a href="/smeta/docs/api_errno.html" class="sidebar-link">接口错误代码说明</a>
+    
+  
+    <strong class="sidebar-title">API 开发相关</strong>
+    
+      <a href="/smeta/docs/null" class="sidebar-link">介绍</a>
+    
+      <a href="/smeta/docs/null" class="sidebar-link">路由规则及设置</a>
+    
+      <a href="/smeta/docs/null" class="sidebar-link">函数及常用 LIB 的调用</a>
+    
+  
+</aside>
+  </div>
+</article>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      &copy; 2014 <a href="http://www.swanlinux.net">Swan team</a><br>
+    </div>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/smeta/js/script.js"></script>
+
+</body>
+</html>

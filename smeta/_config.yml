@@ -1,5 +1,5 @@
 # Basic
-title: SWAM 监控系统数据层包文档 
+title: SMETA 文档 
 subtitle: SWAN monitor core document
 description: 
 url: http://nmred.github.io/
@@ -8,7 +8,7 @@ email: nmred_2008@126.com
 language: zh-CN
 
 # Permalink
-root: /swansoft/
+root: /smeta/
 permalink: :category/:title/
 tag_dir: tags
 archive_dir: archives
@@ -64,5 +64,5 @@ highlight:
 # Read documentaion for more information
 deploy:
   type: github
-  repository: https://github.com/nmred/swansoft.git
+  repository: https://github.com/nmred/smeta.git
   branch: gh-pages
