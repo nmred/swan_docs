@@ -3,10 +3,10 @@ next: madapter
 prev: device
 ---
 
-###添加设备监控器(device_monitor.add)
+###添加设备监控器(dmonitor.add)
 
 ####[URL](#add_url) 
-http://127.0.0.1/user/?/device_monitor.add
+http://127.0.0.1/user/?/dmonitor.add
 
 ####[请求方式](#add_post)
 POST
@@ -31,7 +31,7 @@ JSON
 
 ```
 	<?php
-	$url = '127.0.0.1:9080/user/?/device_monitor.add';
+	$url = '127.0.0.1:9080/user/?/dmonitor.add';
 	$attr_data = array(
 		array(
 			'attr_id' => 1,
@@ -70,7 +70,7 @@ JSON
 ###修改设备监控器(device.mod)
 
 ####[URL](#mod_url) 
-http://127.0.0.1/user/?/device_monitor.mod
+http://127.0.0.1/user/?/dmonitor.mod
 ####[请求方式](#mod_post)
 POST
 ####[支持格式](#mod_json)
@@ -98,7 +98,7 @@ JSON
       ),
   );
   $attr_data = json_encode($attr_data);
-  $url = '127.0.0.1:9080/user/?/device_monitor.mod';
+  $url = '127.0.0.1:9080/user/?/dmonitor.mod';
   $rev = call($url, 'POST', array('device_id' => 1, 'madapter_id' => 1, 'attr_data' => $attr_data, 'monitor_id' => 1));
   $rev = json_decode($rev, true);
   var_dump($rev);
@@ -121,10 +121,10 @@ JSON
 `data` | array NULL  | 不返回数据
 
 ---
-###删除设备监控器(device_monitor.del)
+###删除设备监控器(dmonitor.del)
 
 ####[URL](#del_url) 
-http://127.0.0.1/user/?/device_monitor.del
+http://127.0.0.1/user/?/dmonitor.del
 ####[请求方式](#del_post)
 POST
 ####[支持格式](#del_json)
@@ -139,7 +139,7 @@ JSON
 ####[调用样例](#del_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/user/?/device_monitor.del';
+	$url = '127.0.0.1:9080/user/?/dmonitor.del';
 	$rev = call($url, 'POST', array('monitor_id' => '1', 'device_id' => 1));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
@@ -160,10 +160,10 @@ JSON
 `data` | array NULL  | 不返回数据
 
 ---
-###获取设备监控器(device_monitor.json)
+###获取设备监控器(dmonitor.json)
 
 ####[URL](#json_url) 
-http://127.0.0.1/user/?/device_monitor.json
+http://127.0.0.1/user/?/dmonitor.json
 ####[请求方式](#json_post)
 POST
 ####[支持格式](#json_json)
@@ -223,10 +223,10 @@ JSON
 
 
 ---
-###获取设备监控器(device_monitor.info)
+###获取设备监控器(dmonitor.info)
 
 ####[URL](#info_url) 
-http://127.0.0.1/user/?/device_monitor.info
+http://127.0.0.1/user/?/dmonitor.info
 ####[请求方式](#info_post)
 POST
 ####[支持格式](#info_json)
@@ -244,7 +244,7 @@ JSON
 ####[调用样例](#info_example)
 ```
 	<?php
-	$url = '127.0.0.1:9080/user/?/device_monitor.info';
+	$url = '127.0.0.1:9080/user/?/dmonitor.info';
 	$rev = call($url, 'POST', array('device_id' => '1', 'madapter_id' => '1'));
 	$rev = json_decode($rev, true);
 	var_dump($rev);
